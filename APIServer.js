@@ -51,11 +51,12 @@ module.exports =
         async handleHttpResquest(req, res) {
             this.markRequestProcessStartTime();
             this.httpContext = await HttpContext.create(req, res);
-            this.showRequestInfo();
+            if (req.method!='HEAD')
+                this.showRequestInfo();
             if (!(await this.middlewaresPipeline.handleHttpRequest(this.httpContext)))
                 this.httpContext.response.notFound();
-            this.showRequestProcessTime();
-            this.showMemoryUsage();
+           // this.showRequestProcessTime();
+           // this.showMemoryUsage();
         }
         start() {
             this.httpServer.listen(this.port, () => { this.startupMessage() });
@@ -73,10 +74,10 @@ module.exports =
         }
         showRequestInfo() {
             let time = require('date-and-time').format(new Date(), 'YYYY MMMM DD - HH:mm:ss');
-            log(FgGreen, '<-------------------------', time, '-------------------------');
+            //log(FgGreen, '<-------------------------', time, '-------------------------');
             log(FgGreen, Bright, `Request --> [${this.httpContext.req.method}::${this.httpContext.req.url}]`);
-            log("User agent ", this.httpContext.req.headers["user-agent"]);
-            log("Host ", this.httpContext.hostIp.substring(0, 15), "::", this.httpContext.host);
+            //log("User agent ", this.httpContext.req.headers["user-agent"]);
+            //log("Host ", this.httpContext.hostIp.substring(0, 15), "::", this.httpContext.host);
             if (this.httpContext.payload)
                 log("Request payload ", JSON.stringify(this.httpContext.payload).substring(0, 127) + "...");
         }

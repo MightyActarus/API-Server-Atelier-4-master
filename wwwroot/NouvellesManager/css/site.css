@@ -1,0 +1,155 @@
+body {
+    background-image: linear-gradient(45deg, rgb(255, 133, 222), rgb(73, 73, 247));
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    min-width: 490px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    border: 1px solid lightgray;
+}
+
+.headerPanel {
+    flex:0.5;
+    background-image: linear-gradient(0deg, rgb(174, 235, 255), rgb(135, 184, 201));
+    padding:5px;
+}
+
+.scrollContainer {
+    overflow-y: scroll;
+    /* overflow-x:hidden; */
+    flex:12;
+    border-top: 1px solid lightgray;
+}
+
+.header {
+    width: 100%;
+    font-size: 26px;
+    color:rgb(55, 55, 55);
+    font-weight: bold;
+    text-align: center;
+}
+
+#searchBar {
+    padding-top:10px;
+    display: none;
+    margin: 5px;
+    border-top: 1px solid lightgray;
+}
+
+#nouvellesList {
+    width: 100%;
+    padding: 10px;
+}
+
+.favicon {
+    height: 24px;
+    margin: 8px;
+}
+
+.headerLayout {
+    display: grid;
+    grid-template-columns: 50px auto 35px 35px 19px;
+    align-items: center;
+
+}
+.searchBarLayout {
+    display: grid;
+    grid-template-columns: 0.5fr 40px 1fr 35px 35px 16px;
+    align-items: center;
+
+}
+.nouvelleLayout {
+    align-items: center;
+    border-radius: 8px;
+    padding-left: 5px;
+
+}
+
+.nouvelleRow>.cmd {
+    display: none;
+}
+
+.nouvelleRow:hover>.cmd {
+    display: inline-block;
+}
+
+.nouvelleRow:hover {
+    background-color: rgb(195, 255, 255);
+}
+
+.cmd {
+    cursor: pointer;
+    font-size: 30px !important;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+}
+
+.cmd:hover {
+    color: rgb(2, 166, 221);
+}
+
+.cmd:active {
+    color: lightblue;
+}
+
+label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+div2, span2 {
+    border:1px solid red;
+}
+.nouvelleRow{
+    word-wrap: break-word;
+}
+.nouvelleCategory{
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nouvelleTitle{
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+.nouvelleText{
+    padding: 10px;
+    width: 100%;
+}
+.nouvelleImg{
+    display: block;
+    max-width: 90%;
+    margin: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.nouvelleDate{
+    float: right;
+}
+.optionsContainer{
+    float: right;
+}
+.nouvelleDate{
+    max-width: 100%;
+}
+.logoFavicon{
+    max-width: 50px;
+}
