@@ -140,7 +140,7 @@
             if (Array.isArray(nouvelle)) {
                 nouvelle = nouvelle[0];
             }
-            let date = new Date(parseInt(nouvelle.Date)).toLocaleString();
+            let date = new Date(parseInt(nouvelle.Date)).toString();
             let catElem = $(`<div class="nouvelleCategory">${nouvelle.Category}</div>`);
             let titElem = $(`<div  class="nouvelleTitle">${nouvelle.Title}</div>`);
             let dateElem = $(`<div  class="nouvelleDate">${convertToFrenchDate(date)}</div>`);
